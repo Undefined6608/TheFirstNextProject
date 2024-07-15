@@ -1,0 +1,255 @@
+/*{
+  "extends": "next/core-web-vitals"
+}*/
+{
+	"env": {
+		"browser": true,
+		// 支持浏览器全局变量
+		"es2021": true,
+		// 启用最新的ES特性
+		"node": true
+		// 支持Node.js全局变量和作用域
+	},
+	"extends": [
+		"eslint:recommended",
+		// 使用ESLint推荐的规则
+		"plugin:react/recommended",
+		// 使用React插件的推荐规则
+		"plugin:@next/next/recommended",
+		// 使用Next.js插件的推荐规则
+		"plugin:@typescript-eslint/recommended",
+		// 使用TypeScript插件的推荐规则
+		"plugin:jsx-a11y/recommended",
+		// 使用JSX可访问性插件的推荐规则
+		"plugin:prettier/recommended"
+		// 使用Prettier插件的推荐规则，确保与Prettier兼容
+	],
+	"parser": "@typescript-eslint/parser",
+	// 使用TypeScript解析器
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+			// 启用JSX语法支持
+		},
+		"ecmaVersion": "latest",
+		// 使用最新的ECMAScript版本
+		"sourceType": "module"
+		// 支持ES模块语法
+	},
+	"plugins": [
+		"react",
+		// 使用React插件
+		"@typescript-eslint",
+		// 使用TypeScript插件
+		"jsx-a11y",
+		// 使用JSX可访问性插件
+		"prettier"
+		// 使用Prettier插件
+	],
+	"rules": {
+		"prettier/prettier": "error",
+		// 确保代码风格符合Prettier的规范
+		"react/jsx-uses-react": "off",
+		// 由于新版本的React不需要显式导入React，所以关闭此规则
+		"react/react-in-jsx-scope": "off",
+		// 由于新版本的React不需要显式导入React，所以关闭此规则
+		"react/prop-types": "off",
+		// 由于使用TypeScript进行类型检查，所以关闭此规则
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				"argsIgnorePattern": "^_"
+			}
+		],
+		// 忽略以_开头的未使用变量
+		"@typescript-eslint/explicit-function-return-type": "off",
+		// 允许函数不显式声明返回类型
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		// 允许模块边界上的函数不显式声明返回类型
+		"jsx-a11y/anchor-is-valid": [
+			"error",
+			{
+				"components": [
+					"Link"
+				],
+				// 验证Link组件
+				"specialLink": [
+					"hrefLeft",
+					"hrefRight"
+				],
+				// 验证特殊链接属性
+				"aspects": [
+					"invalidHref",
+					"preferButton"
+				]
+				// 验证无效的href和推荐使用button
+			}
+		],
+		"no-console": "warn",
+		// 警告使用console
+		"no-debugger": "warn",
+		// 警告使用debugger
+		"curly": "error",
+		// 强制使用大括号
+		"eqeqeq": [
+			"error",
+			"always"
+		],
+		// 强制使用全等
+		"quotes": [
+			"error",
+			"double",
+			{
+				"avoidEscape": true
+			}
+		],
+		// 强制使用单引号
+		"semi": [
+			"error",
+			"always"
+		],
+		// 强制使用分号
+		"comma-dangle": [
+			"error",
+			"only-multiline"
+		],
+		// 多行时要求逗号
+		"no-trailing-spaces": "error",
+		// 禁止行尾空格
+		"object-curly-spacing": [
+			"error",
+			"always"
+		],
+		// 强制对象大括号内有空格
+		"array-bracket-spacing": [
+			"error",
+			"never"
+		],
+		// 强制数组括号内无空格
+		"block-spacing": [
+			"error",
+			"always"
+		],
+		// 强制块内有空格
+		"brace-style": [
+			"error",
+			"1tbs",
+			{
+				"allowSingleLine": true
+			}
+		],
+		// 强制使用one true brace style
+		"camelcase": [
+			"error",
+			{
+				"properties": "always"
+			}
+		],
+		// 强制使用驼峰命名
+		"func-call-spacing": [
+			"error",
+			"never"
+		],
+		// 禁止函数调用括号前有空格
+		"key-spacing": [
+			"error",
+			{
+				"beforeColon": false,
+				"afterColon": true
+			}
+		],
+		// 强制键值对冒号前无空格，后有空格
+		"keyword-spacing": [
+			"error",
+			{
+				"before": true,
+				"after": true
+			}
+		],
+		// 强制关键字前后有空格
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		// 强制使用Unix风格的换行符
+		"max-len": [
+			"error",
+			{
+				"code": 1000
+			}
+		],
+		// 强制行最大长度为100个字符
+		"no-mixed-spaces-and-tabs": "error",
+		// 禁止空格和制表符混用
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		// 强制最大连续空行数为1
+		"no-whitespace-before-property": "error",
+		// 禁止属性前有空格
+		"padded-blocks": [
+			"error",
+			"never"
+		],
+		// 禁止块内填充
+		"space-before-blocks": [
+			"error",
+			"always"
+		],
+		// 强制块前有空格
+		/*"space-before-function-paren": [
+			"error",
+			"never"
+		],*/
+		// 禁止函数括号前有空格
+		"space-in-parens": [
+			"error",
+			"never"
+		],
+		// 禁止括号内有空格
+		"space-infix-ops": "error",
+		// 强制操作符周围有空格
+		"spaced-comment": [
+			"error",
+			"always",
+			{
+				"exceptions": [
+					"-",
+					"+"
+				]
+			}
+		],
+		// 强制注释前有空格，例外情况：`-`和`+`
+		"arrow-spacing": [
+			"error",
+			{
+				"before": true,
+				"after": true
+			}
+		]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+			// 自动检测React版本
+		}
+	},
+	"overrides": [
+		{
+			"files": [
+				"**/*.ts",
+				"**/*.tsx"
+			],
+			// 针对TypeScript文件的特定规则
+			"rules": {
+				"@typescript-eslint/explicit-function-return-type": [
+					"error"
+				]
+				// 强制显式声明函数返回类型
+			}
+		}
+	]
+}
